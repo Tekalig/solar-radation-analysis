@@ -1,0 +1,14 @@
+__pycache__/
+.vscode/
+.env
+*.pyc
+*.ipynb_checkpoints
+*.log
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.docx
+*.doc
+*.xls
