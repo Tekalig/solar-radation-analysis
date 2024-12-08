@@ -1,39 +1,49 @@
+# Python cache files
 __pycache__/
-.vscode/
-.env
 *.pyc
-*.ipynb_checkpoints
-*.log
-*.csv
-*.png
-*.jpg
-*.jpeg
-*.pdf
-*.docx
-*.doc
-*.xls
-*.xlsx
-*.pptx
-*.ppt
-*.zip
-*.tar
-*.gz
-*.rar
-*.pkl
-*.h5
-*.hdf5
-*.json
-*.xml
-*.yaml
-*.yml
-*.db
-*.sqlite
-*.sqlite3
-.DS_Store
-Thumbs.db
+*.pyo
+*.pyd
+
+# Virtual environment
+.env
+.venv/
 venv/
 env/
+
+# Data folders (to avoid committing large or sensitive data)
+src/data/
+
+# Streamlit related cache
+/.streamlit/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+
+# PyCharm project files
 .idea/
-dist/
+
+# System-specific files
+.DS_Store
+
+# Configuration files
+*.yml
+*.yaml
+
+# Logs
+logs/
+*.log
+
+# Build directories
 build/
+dist/
+
+# Ignore test coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Ignore deployment artifacts
 *.egg-info/

@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5231a70-adfc-420b-9fcf-ac265ab47943" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/notebooks/summary-statistics.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/solar-radation-analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/solar-radation-analysis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,7 @@
       <updated>1733553978609</updated>
       <workItem from="1733553980023" duration="2505000" />
       <workItem from="1733589672615" duration="7653000" />
-      <workItem from="1733654193263" duration="10320000" />
+      <workItem from="1733654193263" duration="11000000" />
     </task>
     <servers />
   </component>
