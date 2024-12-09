@@ -53,36 +53,31 @@ Data preprocessing steps:
    git clone <repository_url>
    cd <repository_folder>
 
-   Install dependencies:
-bash
-Copy code
-pip install -r requirements.txt
-Launch Jupyter Notebook:
-bash
-Copy code
-jupyter notebook
-Running the Notebook
-Open the notebook solar_energy_analysis.ipynb in Jupyter Notebook.
-Run each cell sequentially to:
-Load the dataset.
-Preprocess the data.
-Generate statistical summaries and visualizations.
-View the final recommendation and insights.
-Results and Insights
-The analysis concludes that:
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
 
-Togo is the most favorable region for solar energy investments due to its superior solar irradiance metrics.
-Ser offers more stable conditions but lower overall energy potential.
-Benin serves as a balanced alternative but does not outperform Togo.
-License
+3. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   
+4. Running the Notebook
+   ```bash
+      Open the solar_energy_analysis.ipynb notebook in Jupyter Notebook.
+      Run each cell sequentially to:
+      Load the dataset.
+      Preprocess the data.
+      Generate statistical summaries and visualizations.
+      View the final recommendation and insights.
+      Results and Insights
+5. The analysis concludes that:
+   Benin is the most favorable region for solar energy investments due to its superior solar irradiance metrics.
+
+**License**
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Contact
+**Contact**
 For questions or suggestions, please contact:
 
 Name: Tekalign Mesfin
 Email: [your_email@example.com]
-css
-Copy code
-
-Save this content as `README.md` in your project directory. It provides a clear structure and helps users understand and use your notebook effectively.
