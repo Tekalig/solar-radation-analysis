@@ -40,8 +40,8 @@ The analysis incorporates a comprehensive dataset, including:
 
 ### Clone the Repository:
 ```bash
-git clone https://github.com/solar-project/analysis.git
-cd analysis
+git clone https://github.com/Tekalig/solar-radation-analysis.git
+cd solar-radation-analysis
 ```
 
 ### Install Dependencies:

@@ -11,7 +11,7 @@ venv/
 env/
 
 # Data folders (to avoid committing large or sensitive data)
-src/data/
+data/
 
 # Streamlit related cache
 /.streamlit/

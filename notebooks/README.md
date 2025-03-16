@@ -1,7 +1,5 @@
-# Solar Energy Potential Analysis
-
-This project analyzes solar energy potential across three regions (Togo, Ser, and Benin) using key solar irradiance metrics and temperature data to determine the most suitable region for solar energy investments.
-
+# Notebooks Folder
+This folder is responsible for importing and running code from the `src` folder in one place. It contains scripts for data preprocessing, analysis, and visualization. Each script is designed to perform specific tasks to ensure the data is clean, well-analyzed, and the results are effectively communicated.
 ---
 
 ## **Table of Contents**
@@ -50,34 +48,37 @@ Data preprocessing steps:
 ## **Setup Instructions**
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
-   cd <repository_folder>
+   git clone https://github.com/Tekalig/solar-radation-analysis.git
+   cd solar-radation-analysis
+   ```
 
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   ```
 
 3. Launch Jupyter Notebook:
    ```bash
    jupyter notebook
-   
-4. Running the Notebook
-   ```bash
-      Open the solar_energy_analysis.ipynb notebook in Jupyter Notebook.
-      Run each cell sequentially to:
-      Load the dataset.
-      Preprocess the data.
-      Generate statistical summaries and visualizations.
-      View the final recommendation and insights.
-      Results and Insights
-5. The analysis concludes that:
-   Benin is the most favorable region for solar energy investments due to its superior solar irradiance metrics.
+   ```
 
-**License**
+4. Running the Notebook:
+   Open the `exploratory_data_analysis.ipynb` notebook in Jupyter Notebook.
+   Run each cell sequentially to:
+   - Load the dataset.
+   - Preprocess the data.
+   - Generate statistical summaries and visualizations.
+   - View the final recommendation and insights.
+
+## **Results and Insights**
+The analysis concludes that:
+Benin is the most favorable region for solar energy investments due to its superior solar irradiance metrics.
+
+## **License**
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-**Contact**
+## **Contact**
 For questions or suggestions, please contact:
 
-Name: Tekalign Mesfin
-Email: [your_email@example.com]
+**Name**: Tekalign Mesfin  
+**Email**: [tekahazi06@gmail.com]

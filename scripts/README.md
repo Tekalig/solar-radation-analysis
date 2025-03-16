@@ -1,57 +1,74 @@
 # Scripts Folder
 
-This folder contains the scripts and utility functions used across the project. These scripts are modular and designed to perform specific tasks such as data preprocessing, visualization, and statistical analysis.
+This folder is responsible for importing and running code from the `src` folder in one place. It contains scripts for data preprocessing, analysis, and visualization. Each script is designed to perform specific tasks to ensure the data is clean, well-analyzed, and the results are effectively communicated.
 
----
+### **Contents**
+- `data_preprocessing.py`: Cleans and prepares the dataset for analysis.
+- `exploratory_data_analysis.py`: Performs initial data exploration and visualization.
+- `results_visualization.py`: Generates plots and charts to visualize the analysis results.
 
-## **Contents**
-1. [Overview](#overview)
-2. [File Descriptions](#file-descriptions)
-3. [Usage](#usage)
-4. [Dependencies](#dependencies)
+These scripts work together to provide a comprehensive analysis of solar irradiance data, helping to identify the best regions for solar energy projects.
 
----
 
 ## **Overview**
-The `scripts` folder is structured to keep the project modular and maintainable. Each script focuses on a specific functionality, making it easy to reuse and debug.
+The analysis evaluates solar irradiance metrics:
+- **Global Horizontal Irradiance (GHI)**
+- **Direct Normal Irradiance (DNI)**
+- **Diffuse Horizontal Irradiance (DHI)**
+- **Ambient Temperature (Tamb)**
+
+The objective is to recommend the most suitable region for solar energy projects by analyzing the data and visualizing the results.
 
 ---
 
-## **File Descriptions**
-Below is a list of the scripts included in this folder:
+## **Dataset Description**
+The dataset contains solar irradiance and temperature data for Togo, Benin, and Ghana. Key columns include:
+- `Region`
+- `GHI` (Global Horizontal Irradiance)
+- `DNI` (Direct Normal Irradiance)
+- `DHI` (Diffuse Horizontal Irradiance)
+- `Tamb` (Temperature)
 
-1. **`data_cleaning.py`**  
-   - Contains functions for cleaning the dataset (e.g., handling missing values, removing outliers, and ensuring data consistency).
-   - Example functions:
-     - `clean_missing_values()`
-     - `remove_outliers()`
-
-2. **`data_validation.py`**  
-   - Implements functions to validate the integrity of the dataset after cleaning.
-   - Example functions:
-     - `validate_numeric_columns()`
-     - `check_consistency()`
-
-3. **`visualization.py`**  
-   - Includes functions for generating visualizations like bar charts and line graphs.
-   - Example functions:
-     - `plot_bar_chart()`
-     - `plot_line_graph()`
-
-4. **`statistical_analysis.py`**  
-   - Provides utilities for computing summary statistics such as mean, median, and standard deviation.
-   - Example functions:
-     - `calculate_statistics()`
-     - `generate_summary()`
+Data preprocessing steps:
+1. Cleaning missing values.
+2. Removing outliers.
+3. Calculating summary statistics.
 
 ---
 
-## **Usage**
-To use any script, import it into your Python code or notebook as needed. Below are examples of how to use these scripts:
+## **Key Metrics**
+- **Mean GHI, DNI, DHI**: Indicates potential solar energy yield.
+- **Standard Deviation**: Measures variability in solar conditions.
+- **Temperature**: Impacts panel efficiency but is factored into the recommendation.
 
-### **Example 1: Data Cleaning**
-```python
-from scripts.data_cleaning import clean_missing_values
+---
 
-# Clean the dataset
-cleaned_data = clean_missing_values(raw_data)
+## **Setup Instructions**
+1. Clone the repository:
+```bash
+   git clone https://github.com/Tekalig/solar-radation-analysis.git
+   cd solar-radation-analysis
+  ```
+
+2. Install dependencies:
+```bash
+   pip install -r requirements.txt
+```
+
+
+3. Run the analysis script:
+```bash
+   python scripts/exploratory_data_analysis.py
+   ```   
+
+4. The analysis concludes that:
+   Benin is the most favorable region for solar energy investments due to its superior solar irradiance metrics.
+
+**License**
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+**Contact**
+For questions or suggestions, please contact:
+
+Name: Tekalign Mesfin
+Email: [tekahazi06@gmail.com]
