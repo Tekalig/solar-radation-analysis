@@ -1,6 +1,18 @@
 import pandas as pd
 import numpy as np
 
+
+def data_loader(file_path, parse_dates=None):
+    """
+    Load the dataset from a CSV file.
+    Parameters:
+        file_path (str): The file path to the CSV file.
+    Returns:
+        pd.DataFrame: The loaded dataset.
+    """
+    return pd.read_csv(file_path, parse_dates=parse_dates)
+
+
 def handle_missing_values(df):
     """
     Handle missing values in the dataset by imputing or dropping.
@@ -57,7 +69,7 @@ def clean_data(df):
         pd.DataFrame: The cleaned DataFrame.
     """
     # List of columns to check for negatives and outliers
-    numeric_columns = ['GHI', 'DNI', 'DHI', 'ModA', 'ModB', 'WS', 'WSgust']
+    numeric_columns = ["GHI", "DNI", "DHI", "ModA", "ModB", "WS", "WSgust"]
 
     df = handle_missing_values(df)
     df = handle_negative_values(df, numeric_columns)

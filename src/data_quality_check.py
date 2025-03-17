@@ -1,6 +1,3 @@
-import pandas as pd
-import numpy as np
-
 def data_quality_check(df, columns):
     """
     Perform data quality checks on specified columns of a DataFrame.

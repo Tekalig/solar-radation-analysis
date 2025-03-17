@@ -9,50 +9,75 @@ def time_series_analysis(data, dataset_name):
     Parameters:
         data (pd.DataFrame): The dataset to analyze.
         dataset_name (str): The name of the dataset for titles.
+
+    Returns:
+        list: A list of matplotlib figure objects.
     """
+    figures = []
+
     # Set Timestamp as the index
-    data.set_index('Timestamp', inplace=True)
+    data.set_index("Timestamp", inplace=True)
 
     # Plot GHI, DNI, DHI, and Tamb over time
-    plt.figure(figsize=(14, 7))
-    for col in ['GHI', 'DNI', 'DHI', 'Tamb']:
+    fig1 = plt.figure(figsize=(14, 7))
+    for col in ["GHI", "DNI", "DHI", "Tamb"]:
         data[col].plot(label=col)
 
-    plt.title(f'Time Series of GHI, DNI, DHI, and Tamb - {dataset_name}')
-    plt.xlabel('Time')
-    plt.ylabel('Values')
+    plt.title(f"Time Series of GHI, DNI, DHI, and Tamb - {dataset_name}")
+    plt.xlabel("Time")
+    plt.ylabel("Values")
     plt.legend()
     plt.grid(True)
-    plt.show()
+    figures.append(fig1)
 
     # Monthly aggregation for trends
-    monthly_data = data.resample('ME').mean()
-    plt.figure(figsize=(14, 7))
-    for col in ['GHI', 'DNI', 'DHI']:
+    monthly_data = data.resample("ME").mean()
+    fig2 = plt.figure(figsize=(14, 7))
+    for col in ["GHI", "DNI", "DHI"]:
         monthly_data[col].plot(label=col)
 
-    plt.title(f'Monthly Average of Solar Radiation Components - {dataset_name}')
-    plt.xlabel('Month')
-    plt.ylabel('Values')
+    plt.title(f"Monthly Average of Solar Radiation Components - {dataset_name}")
+    plt.xlabel("Month")
+    plt.ylabel("Values")
     plt.legend()
     plt.grid(True)
-    plt.show()
+    figures.append(fig2)
 
     # Evaluate the impact of cleaning on sensor readings
-    cleaned_data = data[data['Cleaning'] == 1]
-    uncleaned_data = data[data['Cleaning'] == 0]
+    cleaned_data = data[data["Cleaning"] == 1]
+    uncleaned_data = data[data["Cleaning"] == 0]
 
-    plt.figure(figsize=(14, 7))
-    sns.lineplot(x=cleaned_data.index, y=cleaned_data['ModA'], label=f'ModA (Cleaned) - {dataset_name}', color='blue')
-    sns.lineplot(x=uncleaned_data.index, y=uncleaned_data['ModA'], label=f'ModA (Uncleaned) - {dataset_name}',
-                 color='orange')
-    sns.lineplot(x=cleaned_data.index, y=cleaned_data['ModB'], label=f'ModB (Cleaned) - {dataset_name}', color='green')
-    sns.lineplot(x=uncleaned_data.index, y=uncleaned_data['ModB'], label=f'ModB (Uncleaned) - {dataset_name}',
-                 color='red')
+    fig3 = plt.figure(figsize=(14, 7))
+    sns.lineplot(
+        x=cleaned_data.index,
+        y=cleaned_data["ModA"],
+        label=f"ModA (Cleaned) - {dataset_name}",
+        color="blue",
+    )
+    sns.lineplot(
+        x=uncleaned_data.index,
+        y=uncleaned_data["ModA"],
+        label=f"ModA (Uncleaned) - {dataset_name}",
+        color="orange",
+    )
+    sns.lineplot(
+        x=cleaned_data.index,
+        y=cleaned_data["ModB"],
+        label=f"ModB (Cleaned) - {dataset_name}",
+        color="green",
+    )
+    sns.lineplot(
+        x=uncleaned_data.index,
+        y=uncleaned_data["ModB"],
+        label=f"ModB (Uncleaned) - {dataset_name}",
+        color="red",
+    )
 
-    plt.title(f'Impact of Cleaning on Sensor Readings (ModA and ModB) - {dataset_name}')
-    plt.xlabel('Time')
-    plt.ylabel('Sensor Values')
+    plt.title(f"Impact of Cleaning on Sensor Readings (ModA and ModB) - {dataset_name}")
+    plt.xlabel("Time")
+    plt.ylabel("Sensor Values")
     plt.legend()
     plt.grid(True)
-    plt.show()
+    figures.append(fig3)
+
+    return figures
