@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 def create_bubble_chart(data, x_col, y_col, bubble_size_col, bubble_color_col, title):
     """
     Create a bubble chart to visualize the relationship between variables.
@@ -13,22 +14,22 @@ def create_bubble_chart(data, x_col, y_col, bubble_size_col, bubble_color_col, t
         title (str): Title of the chart.
 
     Returns:
-        None: Displays the bubble chart.
+        plt.Figure: The created bubble chart figure.
     """
     plt.figure(figsize=(12, 8))
-    sizes = data[bubble_size_col] * 10  # Scale bubble size for better visualization
-    scatter = plt.scatter(
+    fig, ax = plt.subplots()
+    scatter = ax.scatter(
         data[x_col],
         data[y_col],
-        s=sizes,
+        s=data[bubble_size_col] * 10,  # Adjust size scaling as needed
         c=data[bubble_color_col],
-        cmap='viridis',
+        cmap="viridis",
         alpha=0.7,
-        edgecolors="w"
+        edgecolors="w",
+        linewidth=0.5,
     )
-    plt.colorbar(scatter, label=bubble_color_col)
-    plt.title(title)
-    plt.xlabel(x_col)
-    plt.ylabel(y_col)
-    plt.grid(True, alpha=0.3)
-    plt.show()
+    ax.set_title(title)
+    ax.set_xlabel(x_col)
+    ax.set_ylabel(y_col)
+    plt.colorbar(scatter, ax=ax, label=bubble_color_col)
+    return fig

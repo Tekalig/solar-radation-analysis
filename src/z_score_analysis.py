@@ -1,6 +1,3 @@
-import pandas as pd
-import numpy as np
-
 def calculate_z_scores(data, columns):
     """
     Calculate Z-scores for the specified columns in the dataset to identify outliers.
@@ -17,6 +14,7 @@ def calculate_z_scores(data, columns):
     outliers = z_scores.abs() > 3  # Flag data points with Z-score > 3 as outliers
     return z_scores, outliers
 
+
 def flag_outliers(data, z_scores, columns):
     """
     Add a column to the dataset indicating whether any of the specified columns have outliers.
@@ -29,5 +27,5 @@ def flag_outliers(data, z_scores, columns):
     Returns:
         pd.DataFrame: The updated dataset with a new "Outlier_Flag" column.
     """
-    data['Outlier_Flag'] = z_scores[columns].abs().max(axis=1) > 3
+    data["Outlier_Flag"] = z_scores[columns].abs().max(axis=1) > 3
     return data
