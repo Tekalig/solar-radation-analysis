@@ -47,3 +47,6 @@ htmlcov/
 
 # Ignore deployment artifacts
 *.egg-info/
+
+# outputs file
+/screenshots/
